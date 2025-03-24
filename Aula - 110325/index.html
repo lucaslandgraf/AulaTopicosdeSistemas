@@ -1,0 +1,109 @@
+<html>
+<head>
+	<title> Aula 02</title>
+	<script>
+		console.log("Olá Mundo!");
+		console.warn("Adeus Mundo!");
+		console.error("Olá Erro!");
+
+		//Demonstando tipagem fraca
+		var fruta;
+		console.log(fruta);
+		console.log(typeof fruta);
+
+		fruta = "abacaxi";
+		console.log("fruta");
+		console.log(typeof fruta);
+
+		/* Demonstrando o conceito de 
+		tipagem dinâmica*/
+		var preco;
+		console.log(typeof precos);
+		preco = 149.50;
+		console.log(preco);
+		console.log(typeof preco);
+		preco = true;
+		console.log(preco);
+		console.log(typeof preco);
+		preco = "Está muito caro";
+		console.log(preco);
+		console.log(typeof preco);
+
+
+		// Demonstrando o conceito de redeclaração
+		var preco = 247.32;
+		console.log("Novo valor de preço: " + preco);
+
+		let piloto = "Sainz";
+		console.log("Piloto: ", piloto);
+		piloto = "Verstappen";
+		console.log("Piloto: ", piloto);
+		//let piloto = "Hamilton";						
+
+		const USUARIO = "Alex";
+		console.log("Usuário: ", USUARIO);
+		console.log("Tipo: ", typeof USUARIO);
+		//const USUARIO = "Junior";
+		//USUARIO = "Junior";
+
+		/* QUIZ */
+
+		if(true){
+			var varVariable = "I am VAR";
+			let letVariable = "I am LET";
+			const constVariable = "I am CONST";
+		}		
+		console.log(varVariable); //I am VAR
+		//console.log(letVariable); // ERROR IS NOT DEFINED (fora do escopo)
+		//console.log(constVariable); // ERROR IS NOT DEFINED (fora do escopo)
+		let letVariable = "Redeclarei a LET";
+		console.log(letVariable);
+
+		function testScope(){
+			var insideFunction = "Exists inside function";
+			return insideFunction;
+		}
+
+		testScope();
+		console.log(testScope()); // Exist inside function
+		
+		if(true){
+			let carro = "Porsche"
+			console.log("Carro", carro);
+			if(true){
+				console.log("Carro outro bloco ", carro);
+			}
+			var xpto = "Xpto";
+		}
+		// console.log(carro); // Erro
+
+		let mediaKmL = 5.5;
+		let carro = "Lamborghini";
+
+		if(carro == "Porsche" || mediaKmL <= 5){
+			console.log("Se lascou!");
+		}else{
+			console.log("Economia, já pode pagar um Arnaldos para o professor");
+		}
+		
+		let cincoNumerico = 5;
+		let cincoString = "5";
+
+		if(cincoNumerico == cincoString){
+			console.log("Cinco é igual a cinco: 5 == '5'");
+		}
+
+		if(cincoNumerico === cincoString){
+			console.log("Cinco é estritamente igual a cinco: 5 === 5");
+		}else{
+			console.log("Cinco não é estritamente igual a cinco 5 !== '5'");
+		}
+
+		</script>
+</head>
+
+<body>
+	<h1>Aula #02</h1>
+</body>
+
+</html>
