@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 03</title>
+    <script>
+        console.log("Hello, World!");
+
+        /* Dados Primitivos */
+        /* String/Undefined */
+
+        let fruta;
+        console.log("Valor de fruta: ", fruta);
+        console.log("Tipo de fruta: ", typeof fruta);
+        
+        fruta = "Melancia";
+        console.log("Valor de furta: ", fruta);
+        console.log("Tipo de fruta: ", typeof fruta);
+
+        /* Number */
+        let salarioWellington = 49560.28;
+        console.log("Salário do Wellington: ", salarioWellington);
+        console.log("Tipo de variável: ", typeof salarioWellington);
+
+        let idadeDoWellington = 26;
+        console.log("idade do Wellington: ", idadeDoWellington);
+        console.log("Tipo de variável idade: ", typeof idadeDoWellington);
+
+
+        /* Boolean */
+        let isAdmin = true;
+        console.log("É admin? ", isAdmin);
+        console.log("Tipo de isAdmin: ", typeof isAdmin);
+
+        /* Symbol */
+
+        let id = Symbol("id1")
+        console.log("Valor de id: ", id);
+        console.log("Tipo de id: ", typeof id);
+
+        /* null */
+        let carro = null;
+        console.log("Valor do carro: ", carro);
+        console.log("Tipo de carro: ", typeof carro);
+
+        /* BigInt */
+
+        let numerao = 2152894829424828724824868424027482648648964017046184680623804620846109471098183928749826892698264164016084616308126301730718364286482608168361036103618627982482789264287428472472047290472094729074209472974290420740927492790472094720974207492742974927427402472947209472947498268926982641640160846163081263017307183642864826074982689269826416401608461630812630173071836428648260749826892698264164016084616308126301730718364286482607498268926982641640160846163081263017307183642864826074982689269826416401608461630812630173071836428648260n;
+        console.log("Valor de numerão: ", numerao);
+        console.log("Tipo de numerao: ", typeof numerao);
+
+        /* Dados não primitivos */
+
+        let pessoa = {nome: "Alex", materia: "Tópicos Especiais"};
+        console.log("Valor de pessoa: ", pessoa);
+        console.log("Valor de pessoa: ", typeof pessoa);
+
+        console.log("Matéria do Alex: ", pessoa.materia);
+
+        /* Array */
+
+        let numeros = [1, 2, 3, 4, 5];
+        console.log("Valor de numeros: ", numeros);
+        console.log("Tipo de números: ", typeof numeros);
+
+        /* Objeto dentro de um Array */
+
+        let professores = [
+        {
+            nome: "Alex", 
+            materia: "Top. Esp"
+        },
+        {
+            nome: "Juliana",
+            materia: "PHP"
+
+        },
+        {
+            nome: "Liliane",
+            materia: "Java"
+        }
+        ];
+        console.log("Valor de professores: ", professores);
+        console.log("Tipo dos professores: ", typeof professores);
+
+        console.log("Materia do prof1: ", professores[1].materia);
+    </script>
+</head>
+<body>
+    <h1>Aula #03 - Tópicos Especiais</h1>
+</body>
+</html>
