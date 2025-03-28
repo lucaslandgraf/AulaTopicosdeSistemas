@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estruturas de Repetição</title>
+    <script>
+        // For
+        for(let i = 0; i < 10; i++){
+            console.log("Valor de i: ", i);
+
+        }
+
+        let j = 0;
+
+        for(; j <= 5; j++){
+            console.log("Valor de j: ", j);
+
+        }
+
+        let k = 1;
+        for(;;){
+            console.log("Valor de k: ", k);
+            k++;
+            if(k > 7){
+                break;
+            }
+        }
+
+        let l = 1;
+        while(l <= 10){
+            console.log("Valor de L: ", l);
+            l++;
+        }
+
+        let m = 1;
+        while(m <= 15){
+            if(m === 5){
+                m++;
+                continue;
+            }
+            console.log("Valor de m: ", m);
+            m++;
+        }
+
+        let n = 1;
+        do{
+            console.log("Valor de n: ", n);
+            n++;
+        }while(n <= 7);
+
+        // Voltando para estruturas condicionais
+
+        let fruta = "Morango";
+
+        // O if ternário é composto de uma condição de teste, "?" valor se verdadeiro
+        // menos verboso
+        fruta == "Abacaxi" ? console.log("Amarelo") : console.log("Vermelho");
+
+        if(fruta == "Abacaxi"){
+            console.log("Amarelo");
+        }else{
+            console.log("Vermelho");
+        }
+
+        let sabor = fruta == "Abacaxi" ? "Azedo" : "Salgado";
+        console.log("Sabor: ", sabor);
+
+
+        // Se tem qualquer valor => true, se for nula, undefined ou vazia => False
+        // let cpfVindoDoFront; //"123456789";
+        let cpfVindoDoFront = "123456789";
+
+        let cpf = cpfVindoDoFront ? cpfVindoDoFront : "Não Informado";
+        console.log("CPF: ", cpf);
+
+        if(!true) 
+            console.log("Verdadeiro");
+        console.log("XPTO");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+    <h1>Estruturas de Repetição</h1>
+</body>
+</html>
