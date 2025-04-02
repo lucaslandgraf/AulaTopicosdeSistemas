@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 01/04/25</title>
+    <script>
+        const pessoa = {
+            nome: "Alex",
+            profissao: "Professor",
+            salario: 23498.56
+        };
+
+        // Acessando o valor da propriedade do objeto
+
+        let nomeDaPessoa = pessoa.nome;
+
+        console.log("Nome: ", nomeDaPessoa);
+        console.log("Profissão: ", pessoa.profissao);
+
+        // Outra forma de acessar propriedade do objeto
+
+        let salarioDaPessoa = pessoa['salario'];
+        console.log("Salário: ", salarioDaPessoa);
+
+        // Alterando o valor do objeto
+
+        pessoa.salario = 33578.21;
+        console.log("Salário reajustado: ", pessoa.salario);
+
+
+        // Adicionando propriedades ao objeto
+
+        pessoa.experiencia = 20;
+        console.log(pessoa);
+
+
+        // Removendo propriedades do objeto
+
+        delete pessoa.salario;
+        console.log(pessoa);
+
+        const pessoa2 = {
+            nome: "Helton",
+            profissao: "Professor",
+            salario: 47580.13,
+            experiencia: 30,
+            endereco: {
+                rua: "JK",
+                bairro: "Centro",
+                cidade: "Londrina"
+            }
+        };
+
+
+        console.log("Rua: ", pessoa2.endereco.rua);
+
+        // Arrays
+
+        const frutas = ['Maçã', 'Banana', 'Laranja'];
+        console.log(frutas[1]);
+
+        for(let i = 0; i < frutas.length; i++){
+            console.log(frutas[i]);
+
+        };
+
+        // Push e Pop
+        
+        frutas.push("Abacaxi");
+        frutas.push("Melancia");
+
+        for(let i = 0; i < frutas.length; i++){
+            console.log(frutas[i]);
+        };
+
+        console.log("************");
+        frutas.pop();
+        for(let i = 0; i < frutas.length; i++){
+            console.log(frutas[i]);
+        };
+
+    </script>
+</head>
+<body>
+    <h1>Aula #05</h1>
+</body>
+</html>
