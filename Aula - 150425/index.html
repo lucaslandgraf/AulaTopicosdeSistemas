@@ -1,0 +1,88 @@
+<html>
+    <head>
+        <title>Aula 07</title>
+        <script>
+            // Iniciando com Try e Catch
+            const valorStr = "Esse não é um projeto";
+            //const valorStr = `{"id": 1, "nome": "Alex"}`;
+            try{
+            const usuario = JSON.parse(valorStr);
+            console.log("Nome do usuário: ", usuario.nome);
+            }catch(error){
+                console.error("Erro na conversão ", error);
+            }
+            console.log("Olá mundo!");
+
+            // Usando o Finally
+
+            const setPessoa = () => {
+            let pessoa;
+
+            try {
+                console.log(pessoa.nome);
+                return;
+            } catch (error) {
+                console.warn("Erro ao acessar a propriedade nome: ", error)
+                return;
+            }finally{
+                console.log("Fechando conexão");
+            }
+        }
+        setPessoa();
+
+        // Throw
+
+        function dividir (a, b){
+            if(b === 0){
+                throw new Error("Não é possível dividir por 0");
+            }
+            return a / b;
+        }
+
+        try{
+            let resultado = dividir(10,0);
+            console.log("Resultado: ", resultado);
+        }catch(error){
+            console.error("Erro ao dividir! ", error);
+        }
+
+        //mais um Throw
+
+        function cadastrarPessoa(nome = "Não Informado", idade = 0){
+            if(idade < 0){
+                throw new Error("Idade Inválida!");
+
+            }
+            let pessoa = {"nome": nome, "idade": idade};
+            console.log("Pessoa Cadastrada: ", pessoa.nome);
+        }
+
+        try{
+            cadastrarPessoa("Alex", 19);
+        }catch(error){
+            console.error("Erro ao cadastrar pessoa: ", error);
+        }
+
+
+        // Tratamento de exceções
+
+        const enviarMensagem = (mensagem) => {
+            try{
+                if(!mensagem){
+                    throw new Error("Mensagem inválida");
+                }
+                console.log("Mensagem enviada: ", mensagem);
+            }catch(error){
+                console.log("Erro ao enviar mensagem: ", error);
+            }
+        }
+        enviarMensagem("Mensagem Teste");
+
+        
+
+        </script>
+    </head>
+    <body>
+        <h1>Aula #07</h1>
+    </body>
+</html>

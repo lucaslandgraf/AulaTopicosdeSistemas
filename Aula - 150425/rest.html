@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parâmetros REST</title>
+    <script>
+        function sum(...numbers){
+            return numbers.reduce((acumulado, atual) => acumulado + atual, 0);
+        }
+        console.log("Resultado: ", sum(1,2,3))
+
+        const juntar = (...palavras) => palavras.join(" ");
+        console.log(juntar("Olá", "Alex", ",", "seja", "bem", "vindo"));
+
+        const separarPrimeiroDoResto = (primeiro, segundo, ...resto) => {
+            console.log("Primeiro", primeiro);
+            console.log("Segundo", segundo);
+            console.log("Outros", resto);
+        }  
+        separarPrimeiroDoResto(1, 2, 3, 4, 5, 6, 7);
+
+        const maiores = pessoas => pessoas.filter(pessoa => pessoa.idade >= 18);
+        const arrayDePessoas = [
+            {"nome": "Alex", "idade": 19},
+            {"nome": "Juliana", "idade": 22},
+            {"nome": "Helton", "idade": 16}
+        ];
+        const pessoasMaiores = maiores(arrayDePessoas);
+        console.log("Maiores: ", pessoasMaiores);
+    </script>
+</head>
+<body>
+    <h1>Parâmetros REST</h1>
+</body>
+</html>
