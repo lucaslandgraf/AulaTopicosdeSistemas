@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>Alta Ordem</title>
+        <script>
+            // Função de alta ordem que recebe uma função como parâmetro
+            function processarArray(array, operacao){
+                for(i = 0; i < array.length; i++){
+                    operacao(array[i]);
+                }
+            }
+
+            let arrayCriado = [1, 2, 3, 4, 'Xpto'];
+            processarArray(arrayCriado, console.log);
+
+
+            // Função reduce é uma função de alta ordem
+            const valores = [10, 20, 30];
+            const soma = valores.reduce((acumulado, atual) => acumulado + atual);
+            console.log(soma);
+
+            //Função map
+
+            const numeros = [1, 2, 3, 4];
+            const dobrados = numeros.map(num => num * 2);
+            console.log(dobrados);
+        </script>
+    </head>
+    <body>
+        <h1>Funções de alta ordem</h1>
+    </body>
+</html>

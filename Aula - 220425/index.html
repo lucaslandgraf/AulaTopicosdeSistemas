@@ -1,0 +1,84 @@
+<html>
+    <head>
+        <title>Aula 08</title>
+            <script>
+                let globalVar = "Eu sou uma variável GLOBAL";
+
+                function testaEscopo(){
+                    var localVar = "Eu sou uma variável LOCAL";
+                    console.log(globalVar);
+                    console.log(localVar);
+                }
+
+                testaEscopo();
+                console.log(globalVar);
+                //console.log(localVar);
+
+
+                // Exemplo de Clousure
+                function funcaoExterna(){
+                    let variavelExterna = "Eu sou uma variável externa";
+
+                    function funcaoInterna(){
+                        console.log(variavelExterna); // Clousure
+                    }
+
+                    return funcaoInterna;
+                }
+                const minhaFuncaoInterna = funcaoExterna();
+                minhaFuncaoInterna();
+
+                // Função de Contador
+                function criarContador(){
+                    let contador = 0;
+
+                    return function (){
+                        contador++;
+                        return contador;
+                    }
+                }
+                // Fim da função
+                const contador1 = criarContador();
+                console.log(contador1());
+                console.log(contador1());
+                console.log(contador1());
+
+                //Encapsulando variáveis privadas
+                function criarConta(saldoInicial){
+                    // Variável privada
+                    let saldo = saldoInicial;
+
+                    return {
+                        getSaldo: function () {
+                            return saldo;
+                        },
+                        depositar: function (valor){
+                            saldo += valor;
+                        },
+                        sacar: function (valor) {
+                            if(valor <= saldo) saldo -= valor;
+                        }
+                    }
+                }
+                const conta = criarConta(100);
+                conta.depositar(50);
+                conta.sacar(30);
+                console.log(conta.getSaldo());
+
+
+                // Função que retorna uma função personalizada
+                function saudacao(nome){
+                    return function(mensagem){
+                        console.log(`${mensagem}, ${nome}`);
+                    }
+                }
+                const saudarHelton = saudacao("Helton");
+                saudarHelton("Bom dia");
+                saudarHelton("Boa Noite");
+
+            </script>
+    </head>
+    <body>
+        <h1>Aula #08</h1>
+    </body>
+</html>
