@@ -1,0 +1,72 @@
+<html>
+    <head>
+        <title>Promisses</title>
+        <script>
+
+            function fazerPedidoPizza(){    
+                return new Promise((resolve, reject) => {
+                    console.log("Pedido recebido, preparando...");
+                    setTimeout(() => {
+                        resolve("Pizza Pronta");
+                    }, 3 * 1000);
+                }); 
+            }
+
+            function entregarPizza(){
+                return new Promise((resolve, reject) => {
+                    console.log("Pizza a caminho da entrega...");
+                    setTimeout(() => {
+                        resolve("Pizza entregue");
+                    }, 2 * 1000); 
+                })
+            }
+
+            async function processaPedido(){
+                console.log("Cliente fez o pedido");
+
+                const pizza = await fazerPedidoPizza();
+                console.log(pizza);
+            
+                const entrega = await entregarPizza();
+                console.log(entrega);
+
+                console.log("Cliente feliz comendo a pizza!");
+
+            }
+
+            //processaPedido();
+
+
+            // Outro exemplo de promise
+            function enviarEmail(destinatario){
+                return new Promise((resolve, reject) => {
+                    console.log(`Enviando e-mail para ${destinatario}`);
+                    
+                    setTimeout(() => {
+                        const sucesso = Math.random() > 0.2;
+                        if(sucesso){
+                            resolve("E-mail enviado com sucesso!");
+                        }else{
+                            reject("Falha ao enviar e-mail");
+                        }
+                    }, 2 * 1000)
+                })
+            }
+
+            async function processarEnvio(){
+                try{
+                    const resultado = await enviarEmail("João Victor");
+                    console.log(resultado);
+                }catch(erro){
+                    console.error("Erro: " + erro);
+                }
+            }
+
+            processarEnvio();
+
+        </script>
+    </head>
+    <body>
+        <h1>Promisses</h1>
+    </body>
+</html>
