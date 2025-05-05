@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conceitos - JavaScript</title>
+    <Script>
+
+// Exemplo 1: Hoisting com var
+console.log(a);  // undefined, pois o 'a' é movido para o topo, mas a atribuição não
+var a = 10;
+console.log(a);  // 10
+
+// Exemplo 2: Hoisting com let e const (causa erro)
+try {
+    console.log(b);  // Erro, 'b' está em TDZ (Temporal Dead Zone)
+    let b = 20;
+} catch (error) {
+    console.log(error);  // Exibe o erro
+}
+
+try {
+    console.log(c);  // Erro, 'c' está em TDZ
+    const c = 30;
+} catch (error) {
+    console.log(error);  // Exibe o erro
+}
+
+// Exemplo 3: Imutabilidade de const com objetos
+const pessoa = {
+    nome: 'Lucas',
+    idade: 20
+};
+
+// Não pode reatribuir
+// pessoa = { nome: 'Carlos', idade: 25 };  // Erro!
+
+// Mas pode modificar as propriedades
+pessoa.nome = 'Carlos';  // Modificando a propriedade 'nome'
+console.log(pessoa);  // { nome: 'Carlos', idade: 20 }
+
+// Pode adicionar novas propriedades
+pessoa.sobrenome = 'Silva';
+console.log(pessoa);  // { nome: 'Carlos', idade: 20, sobrenome: 'Silva' }
+
+// Exemplo 4: Sombreamento de variáveis
+let x = 5;  // Variável no escopo global
+function exemploSombreamento() {
+    let x = 10;  // Nova variável 'x' no escopo da função
+    console.log(x);  // 10, 'x' do escopo local
+}
+exemploSombreamento();
+console.log(x);  // 5, 'x' do escopo global
+
+// Exemplo 5: Escopo de Bloco vs. Escopo de Função (com let e var)
+function escopoExemplo() {
+    var a = 1;  // Escopo da função
+    if (true) {
+        let b = 2;  // Escopo de bloco
+        var c = 3;  // Escopo da função
+        console.log('Dentro do bloco - b:', b, 'c:', c);  // b: 2, c: 3
+    }
+    console.log('Fora do bloco - a:', a, 'c:', c);  // a: 1, c: 3
+    // console.log('Fora do bloco - b:', b);  // Erro! 'b' está fora do escopo de bloco
+}
+
+escopoExemplo();
+
+// Exemplo 6: Variáveis de escopo global e local com var e let
+var globalVar = 'Variável Global';
+let globalLet = 'Variável Let Global';
+
+function testeEscopo() {
+    var localVar = 'Variável Local com var';
+    let localLet = 'Variável Local com let';
+    console.log(globalVar);  // Variável Global
+    console.log(globalLet);  // Variável Let Global
+    console.log(localVar);   // Variável Local com var
+    console.log(localLet);   // Variável Local com let
+}
+
+testeEscopo();
+
+// Exemplo 7: Uso de let no loop
+for (let i = 0; i < 3; i++) {
+    console.log(i);  // i: 0, 1, 2
+}
+// console.log(i);  // Erro! 'i' não existe fora do bloco
+
+// Exemplo 8: Uso de var no loop
+for (var j = 0; j < 3; j++) {
+    console.log(j);  // j: 0, 1, 2
+}
+console.log(j);  // j: 3, 'j' ainda existe fora do loop
+
+// Exemplo 9: Temporal Dead Zone
+function testeTDZ() {
+    try {
+        console.log(d);  // Erro, d está em TDZ
+        let d = 40;
+    } catch (e) {
+        console.log('Erro TDZ:', e.message);  // "Cannot access 'd' before initialization"
+    }
+}
+testeTDZ();
+
+// Exemplo 10: Closure e contador privado
+function criarContador() {
+    let contador = 0;  // Variável privada dentro da função
+    return {
+        incrementar: function() {
+            contador++;
+            console.log(contador);
+        },
+        decrementar: function() {
+            contador--;
+            console.log(contador);
+        }
+    };
+}
+
+const contador = criarContador();
+contador.incrementar();  // 1
+contador.incrementar();  // 2
+contador.decrementar();  // 1
+
+
+    </Script>
+</head>
+<body>
+    
+</body>
+</html>
