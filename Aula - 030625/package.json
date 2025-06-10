@@ -1,0 +1,18 @@
+{
+  "name": "paula12",
+  "version": "2.0.0",
+  "description": "Projeto em Node.js para a Aula 12 de Tópicos Especiais.",
+  "license": "ISC",
+  "author": "Lucas Landgraf",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0"
+  }
+}
